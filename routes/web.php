@@ -20,6 +20,10 @@ Route::get('/', function () {
 
 Route::resource('tarifa', 'TarifaController');
 Route::resource('vehiculo', 'VehiculoController');
+Route::resource('ingresoV','Ingreso_vehiculoController');
+Route::resource('ticket','TicketController');
+Route::get('ticket/{placa}/{id}/{valor}','TicketController@generarTicket')->name('ticket');
+
 
 Route::get('/home', 'HomeController@index')->name('home');
 Auth::routes();
